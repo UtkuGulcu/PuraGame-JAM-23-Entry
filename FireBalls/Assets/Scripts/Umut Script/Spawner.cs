@@ -35,7 +35,7 @@ public class Spawner : MonoBehaviour
             GameObject obj = objects[i];
             if (obj == null)
             {
-                // E?er obje yok olduysa, deathpoint de?erini art?r ve listeden ç?kar
+                // Eger obje yok olduysa, deathpoint deferini artýr ve listeden ç?kar
                 DeathPoint++;
                 objects.RemoveAt(i);
             }
