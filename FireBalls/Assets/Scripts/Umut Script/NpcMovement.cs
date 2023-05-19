@@ -1,43 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NpcMovement : MonoBehaviour
 {
-    public Transform[] waypoints; // Kaldýrýmýn yol noktalarý
-    public float speed = 5f; // Karakterin hareket hýzý
+    private NavMeshAgent agent;
 
-    private int currentWaypointIndex = 0; // Þu anki hedef nokta index'i
 
+    private void Awake()
+    {
+      agent = GetComponent<NavMeshAgent>();
+    }
     private void Start()
     {
-        MoveToWaypoint();
+        agent.SetDestination(NpcManager.Instance.GetShortestWayPoint(transform.position));
+        
     }
 
-    private void MoveToWaypoint()
+    private void Update()
     {
-        // Hedef noktaya doðru hareket et
-        Vector3 targetPosition = waypoints[currentWaypointIndex].position;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
-
-        // Eðer karakter hedef noktaya ulaþtýysa bir sonraki hedef noktaya geç
-        if (transform.position == targetPosition)
+        if (Vector3.Distance(transform.position, agent.destination)<0.7f)
         {
-            currentWaypointIndex++;
-
-            // Eðer tüm hedef noktalarý tamamlandýysa hareketi durdur
-            if (currentWaypointIndex >= waypoints.Length)
-            {
-                Debug.Log("Hedefe ulaþýldý!");
-                return;
-            }
+            
+            agent.SetDestination(NpcManager.Instance.GetRandomWayPoint(transform.position));
         }
-
-        // Kaldýrýmýn yüzeyinde kalmasýný saðlamak için y düzlemi sabit tutulur
-        Vector3 newPosition = new Vector3(transform.position.x, waypoints[currentWaypointIndex].position.y, transform.position.z);
-        transform.position = newPosition;
-
-        // Hedef noktaya ulaþýlmadýysa döngüyü devam ettir
-        Invoke("MoveToWaypoint", 0.1f);
+        
     }
+
 }

@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject[] humanPrefabs;
     public int MaksSpawn = 10;
-    public int DeathPoint = 10;
+    public int DeathPoint = 0;
     private List<GameObject> objects = new List<GameObject>();
 
 
