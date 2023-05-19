@@ -9,8 +9,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isMoving;
     
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float rotationSpeed;
 
     private Rigidbody rbPlayer;
+    private Quaternion toRotation;
 
     private void Awake()
     {
@@ -36,6 +38,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        isMoving = PlayerInput.Instance.GetInputVector() != Vector3.zero;
+        Vector3 inputVector = PlayerInput.Instance.GetInputVector();
+
+        isMoving = inputVector != Vector3.zero;
+
+        if (isMoving)
+        {
+            toRotation = Quaternion.LookRotation(inputVector, Vector3.up);
+            
+        }
+
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
     }
 }
