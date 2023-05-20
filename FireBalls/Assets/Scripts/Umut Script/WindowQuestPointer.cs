@@ -47,7 +47,19 @@ public class WindowQuestPointer : MonoBehaviour
 
     
 
-   
+   public QuestPointer FindPointer(Vector3 Position)
+    {
+        QuestPointer FoundQuestPointer = null;
+
+        foreach (QuestPointer questPointer in questPointerList)
+        {
+            if(Position == questPointer.TargetPosition)
+            {
+                FoundQuestPointer = questPointer;
+            }
+        }
+        return FoundQuestPointer;
+    }
 
    
 
@@ -62,13 +74,25 @@ public class WindowQuestPointer : MonoBehaviour
         return questPointer;
     }
 
+    public void DestroyPointer(Vector3 Position)
+    {
+        
+        QuestPointer questPointer = FindPointer(Position);
+        if (questPointer != null)
+        {
+            questPointerList.Remove(questPointer);
+            questPointer.DestroySelf();
+        }
+    }
+
+    
     public class QuestPointer
     {
         private Camera uiCamera;
         private GameObject pointerGameObject;
         private Sprite ArrowSprite;
         private Sprite CrossSprite;
-        private Vector3 TargetPosition;
+        public Vector3 TargetPosition;
         private RectTransform pointerRectTransform;
         private Image pointerImage;
 
@@ -129,15 +153,16 @@ public class WindowQuestPointer : MonoBehaviour
             Vector3 dir = (toPosition - fromPosition).normalized;
             float angle = Helpers.GetAngleFromVectorFloat(dir);
             pointerRectTransform.localEulerAngles = new Vector3(0, 0, angle);
+
+        }
+        public void DestroySelf()
+        {
+            Destroy(pointerGameObject);
         }
     }
 
 
 
-    public void AddGumballMachineToList(Vector3 position)
-    {
-        GumballMachinePositions.Add(position);
-
-    }
+   
 
 }
