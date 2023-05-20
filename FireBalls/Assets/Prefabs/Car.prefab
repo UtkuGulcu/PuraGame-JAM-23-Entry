@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130588579709364963}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.42, y: 0.7389327, z: -1.1959044}
   m_LocalScale: {x: 1.4960176, y: 1.4960176, z: 1.4960176}
   m_ConstrainProportionsScale: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   rbSphere: {fileID: 940856835334328870}
   forwardSpeed: 15000
   reverseSpeed: 7500
-  turnSpeed: 150
+  turnSpeed: 20
   getOffPoint: {fileID: 940856835269831748}
 --- !u!65 &130588579709364965
 BoxCollider:

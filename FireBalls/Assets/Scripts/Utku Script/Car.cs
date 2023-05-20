@@ -33,7 +33,12 @@ public class Car : MonoBehaviour, IInteractable
             verticalInput *= verticalInput > 0 ? forwardSpeed : reverseSpeed;
             verticalInput *= Time.deltaTime;
 
-            float newRotation = horizontalInput * turnSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
+            float newRotation = horizontalInput * turnSpeed * Time.deltaTime * MathF.Abs(rbSphere.velocity.magnitude);
+
+            if (verticalInput < 0)
+            {
+                newRotation *= -1;
+            }
 
             transform.Rotate(0, newRotation, 0);
         }
