@@ -121,6 +121,8 @@ public class GumballMachine : MonoBehaviour, IInteractable
         StartCoroutine(IncreaseMoneyCoroutine);
     }
 
+    
+
     private void InvokeFillAmountChanged()
     {
         OnFillAmountChanged?.Invoke(this, new OnFillAmountChangedEventArgs
@@ -128,4 +130,26 @@ public class GumballMachine : MonoBehaviour, IInteractable
             fillAmount = fillAmount
         });
     }
+
+
+    public void SendPositionToWindowQuestPointer(Vector3 position)
+    {
+        WindowQuestPointer.Instance.ReceivePosition(position);
+    }
+
+    private bool isConditionMet = false;
+
+    private void Update()
+    {
+        if (!isConditionMet && fillAmount < 50)
+        {
+            isConditionMet = true; //Þeker Makinasý doldurulduktan sonra bu bool false dönmeli
+            Vector3 position = transform.position;
+            WindowQuestPointer.Instance.ReceivePosition(position);
+        }
+    }
+
+
+
+
 }
