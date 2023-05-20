@@ -36,22 +36,6 @@ public class GumballMachine : MonoBehaviour, IInteractable
         StartCoroutine(IncreaseMoneyCoroutine);
     }
 
-    //private IEnumerator DecreaseGum()
-    //{
-    //    yield return Helpers.GetWait(timeToDecreaseGum);
-    //    fillAmount -= decreaseAmount;
-    //    fillAmount = Mathf.Clamp(fillAmount, 0, 100);
-
-    //    InvokeFillAmountChanged();
-
-    //    if (fillAmount > 0)
-    //    {
-    //        DecreaseGumCoroutine = DecreaseGum();
-    //        StartCoroutine(DecreaseGumCoroutine);
-    //    }
-
-    //}
-
     private IEnumerator DecreaseGum()
     {
         yield return Helpers.GetWaitForEndOfFrame();
