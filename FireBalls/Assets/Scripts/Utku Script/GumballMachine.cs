@@ -68,7 +68,7 @@ public class GumballMachine : MonoBehaviour, IInteractable
 
     }
 
-    public void StartInteracting()
+    public void Interact()
     {
         StopCoroutine(DecreaseGumCoroutine);
         StartRefillingGumCoroutine = StartRefillingGum();
