@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WindowQuestPointer : MonoBehaviour
 {
-    //[SerializeField] private Camera uiCamera;
+    [SerializeField] private Camera uiCamera;
     private Vector3 targetPosition;
     private RectTransform pointerRectTransform;
 
@@ -36,7 +36,7 @@ public class WindowQuestPointer : MonoBehaviour
             if (cappedTargetScreenPosition.y <= 0) cappedTargetScreenPosition.y = 0f;
             if (cappedTargetScreenPosition.y >= Screen.height) cappedTargetScreenPosition.y = Screen.height;
 
-            Vector3 pointerWorldPosition = Camera.main.ScreenToWorldPoint(cappedTargetScreenPosition);
+            Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(cappedTargetScreenPosition);
             pointerRectTransform.position = pointerWorldPosition;
             pointerRectTransform.localPosition = new Vector3(pointerRectTransform.localPosition.x, pointerRectTransform.localPosition.y, 0f); // Konrol et
 
