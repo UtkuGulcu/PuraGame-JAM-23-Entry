@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public void StartInteracting();
+    public void Interact();
 
     public void StopInteracting();
 }

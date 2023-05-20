@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     private void PlayerInput_OnInteractKeyDown(object sender, EventArgs e)
     {
-        Vector3 boxSize = new Vector3(2.5f, 2f, 2.5f);
+        Vector3 boxSize = new Vector3(1.5f, 2f, 1.5f);
 
         interactedColliders = Physics.OverlapBox(transform.position, boxSize, Quaternion.identity, interactionLayerMask);
 
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         {
             if (interactedCollider.TryGetComponent(out IInteractable interactable))
             {
-                interactable.StartInteracting();
+                interactable.Interact();
             }
         }
     }
@@ -59,6 +59,6 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position, new Vector3(5, 5, 5));
+        Gizmos.DrawWireCube(transform.position, new Vector3(3, 2, 3));
     }
 }

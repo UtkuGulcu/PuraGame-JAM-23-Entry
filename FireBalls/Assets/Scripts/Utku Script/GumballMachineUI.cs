@@ -1,11 +1,9 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class GumballMachineFillAmountBarUI : MonoBehaviour
+public class GumballMachineUI : MonoBehaviour
 {
     [SerializeField] private GumballMachine gumballMachine;
     [SerializeField] private Image fillAmountBar;

@@ -22,7 +22,7 @@ public static class Helpers
         {
             waitForEndOfFrame = new WaitForEndOfFrame();
         }
-
+        
         return waitForEndOfFrame;
     }
 

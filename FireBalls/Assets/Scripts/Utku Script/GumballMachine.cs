@@ -13,11 +13,15 @@ public class GumballMachine : MonoBehaviour, IInteractable
 
     public event EventHandler<OnFillAmountChangedEventArgs> OnFillAmountChanged;
 
-    public IEnumerator DecreaseGumCoroutine;
-    public IEnumerator StartRefillingGumCoroutine;
+    private IEnumerator DecreaseGumCoroutine;
+    private IEnumerator StartRefillingGumCoroutine;
+    private IEnumerator WaitForDecreaseCoroutine;
+    private IEnumerator IncreaseMoneyCoroutine;
 
-    [SerializeField] private int timeToDecreaseGum;
-    [SerializeField] private float decreaseAmount;
+    //[SerializeField] private int timeToDecreaseGum;
+    //[SerializeField] private float decreaseAmount;
+
+    [SerializeField] private float decreaseSpeed;
     
     [HideInInspector] public float fillAmount;
 
@@ -27,12 +31,31 @@ public class GumballMachine : MonoBehaviour, IInteractable
 
         DecreaseGumCoroutine = DecreaseGum();
         StartCoroutine(DecreaseGumCoroutine);
+
+        IncreaseMoneyCoroutine = IncreaseMoney();
+        StartCoroutine(IncreaseMoneyCoroutine);
     }
+
+    //private IEnumerator DecreaseGum()
+    //{
+    //    yield return Helpers.GetWait(timeToDecreaseGum);
+    //    fillAmount -= decreaseAmount;
+    //    fillAmount = Mathf.Clamp(fillAmount, 0, 100);
+
+    //    InvokeFillAmountChanged();
+
+    //    if (fillAmount > 0)
+    //    {
+    //        DecreaseGumCoroutine = DecreaseGum();
+    //        StartCoroutine(DecreaseGumCoroutine);
+    //    }
+
+    //}
 
     private IEnumerator DecreaseGum()
     {
-        yield return Helpers.GetWait(timeToDecreaseGum);
-        fillAmount -= decreaseAmount;
+        yield return Helpers.GetWaitForEndOfFrame();
+        fillAmount -= Time.deltaTime * decreaseSpeed;
         fillAmount = Mathf.Clamp(fillAmount, 0, 100);
 
         InvokeFillAmountChanged();
@@ -44,8 +67,8 @@ public class GumballMachine : MonoBehaviour, IInteractable
         }
 
     }
-    
-    public void StartInteracting()
+
+    public void Interact()
     {
         StopCoroutine(DecreaseGumCoroutine);
         StartRefillingGumCoroutine = StartRefillingGum();
@@ -55,16 +78,17 @@ public class GumballMachine : MonoBehaviour, IInteractable
     public void StopInteracting()
     {
         StopCoroutine(StartRefillingGumCoroutine);
-        DecreaseGumCoroutine = DecreaseGum();
-        StartCoroutine(DecreaseGumCoroutine);
+
+        WaitForDecreaseCoroutine = WaitForDecrease();
+        StartCoroutine(WaitForDecreaseCoroutine);
     }
 
     private IEnumerator StartRefillingGum()
     {
-        fillAmount += 25;
+        fillAmount += 5;
         fillAmount = Mathf.Clamp(fillAmount, 0, 100);
 
-        yield return Helpers.GetWait(1);
+        yield return Helpers.GetWait(0.2f);
 
         InvokeFillAmountChanged();
 
@@ -73,6 +97,28 @@ public class GumballMachine : MonoBehaviour, IInteractable
             StartRefillingGumCoroutine = StartRefillingGum();
             StartCoroutine(StartRefillingGumCoroutine);
         }
+    }
+
+    private IEnumerator WaitForDecrease()
+    {
+        yield return Helpers.GetWait(5);
+        
+        DecreaseGumCoroutine = DecreaseGum();
+        StartCoroutine(DecreaseGumCoroutine);
+    }
+
+    private IEnumerator IncreaseMoney()
+    {
+        yield return Helpers.GetWait(5);
+
+        if (fillAmount > 0)
+        {
+            ResourceManager.Instance.IncreaseMoney(100);
+            Debug.Log(ResourceManager.Instance.GetMoney());
+        }
+
+        IncreaseMoneyCoroutine = IncreaseMoney();
+        StartCoroutine(IncreaseMoneyCoroutine);
     }
 
     private void InvokeFillAmountChanged()
