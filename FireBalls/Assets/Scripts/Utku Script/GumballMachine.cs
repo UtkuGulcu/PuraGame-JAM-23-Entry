@@ -141,7 +141,7 @@ public class GumballMachine : MonoBehaviour, IInteractable
 
     private void Update()
     {
-        if (!isConditionMet && fillAmount < 50)
+        if (fillAmount < 50)
         {
             isConditionMet = true; //Þeker Makinasý doldurulduktan sonra bu bool false dönmeli
             Vector3 position = transform.position;
