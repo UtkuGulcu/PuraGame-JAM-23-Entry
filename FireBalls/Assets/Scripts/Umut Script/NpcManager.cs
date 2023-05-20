@@ -41,11 +41,15 @@ public class NpcManager : MonoBehaviour
 
         while (waypointarray[randomIndex].position == npcPosition)
         {
-            randomIndex = Random.Range(0, waypointarray.Length - 1);
+            randomIndex = Random.Range(0, waypointarray.Length - 1);         
         }
         return waypointarray[randomIndex].position;
+
+
         
 
     }
+
+
 
 }
