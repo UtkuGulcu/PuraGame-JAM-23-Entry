@@ -1,41 +1,85 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using Time = UnityEngine.Time;
 
-public class GumballMachine : MonoBehaviour
+public class GumballMachine : MonoBehaviour, IInteractable
 {
-    //[SerializeField] private float depleteSpeed;
-    [SerializeField] private int depleteTime;
-    [SerializeField] private Image fillAmountBar;
+    public class OnFillAmountChangedEventArgs : EventArgs
+    {
+        public float fillAmount;
+    }
+
+
+    public event EventHandler<OnFillAmountChangedEventArgs> OnFillAmountChanged;
+
+    public IEnumerator DecreaseGumCoroutine;
+    public IEnumerator StartRefillingGumCoroutine;
+
+    [SerializeField] private int timeToDecreaseGum;
+    [SerializeField] private float decreaseAmount;
     
-    private float fillAmount;
-    private float lerpTime;
+    public float fillAmount;
 
     private void Start()
     {
         fillAmount = 100f;
-        lerpTime = 0;
-        StartCoroutine(StartDecreasingGum(fillAmount));
+
+        DecreaseGumCoroutine = DecreaseGum();
+        StartCoroutine(DecreaseGumCoroutine);
     }
 
-    private void Update()
+    private IEnumerator DecreaseGum()
     {
-        //fillAmount = Mathf.Lerp(fillAmount, 0, depleteSpeed * Time.deltaTime);
-        fillAmountBar.fillAmount = fillAmount / 100;
-        Debug.Log(fillAmount);
-    }
+        yield return Helpers.GetWait(timeToDecreaseGum);
+        fillAmount -= decreaseAmount;
+        fillAmount = Mathf.Clamp(fillAmount, 0, 100);
 
-    private IEnumerator StartDecreasingGum(float startAmount)
-    {
-        while (lerpTime <= depleteTime)
+        InvokeFillAmountChanged();
+
+        if (fillAmount > 0)
         {
-            lerpTime += Time.deltaTime;
-            fillAmount = Mathf.Lerp(startAmount, 0, lerpTime / depleteTime);
-            yield return Helpers.GetWaitForEndOfFrame();
+            DecreaseGumCoroutine = DecreaseGum();
+            StartCoroutine(DecreaseGumCoroutine);
         }
 
-        lerpTime = 0f;
+    }
+    
+    public void StartInteracting()
+    {
+        StopCoroutine(DecreaseGumCoroutine);
+        StartRefillingGumCoroutine = StartRefillingGum();
+        StartCoroutine(StartRefillingGumCoroutine);
+    }
+
+    public void StopInteracting()
+    {
+        StopCoroutine(StartRefillingGumCoroutine);
+        DecreaseGumCoroutine = DecreaseGum();
+        StartCoroutine(DecreaseGumCoroutine);
+    }
+
+    private IEnumerator StartRefillingGum()
+    {
+        fillAmount += 25;
+        fillAmount = Mathf.Clamp(fillAmount, 0, 100);
+
+        yield return Helpers.GetWait(1);
+
+        InvokeFillAmountChanged();
+
+        if (fillAmount < 100)
+        {
+            StartRefillingGumCoroutine = StartRefillingGum();
+            StartCoroutine(StartRefillingGumCoroutine);
+        }
+    }
+
+    private void InvokeFillAmountChanged()
+    {
+        OnFillAmountChanged?.Invoke(this, new OnFillAmountChangedEventArgs
+        {
+            fillAmount = fillAmount
+        });
     }
 }
