@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3081829761020225431}
   - component: {fileID: 945804983323235165}
   - component: {fileID: 8692947745753804066}
+  - component: {fileID: 7007265993399447360}
   m_Layer: 0
   m_Name: paved road all directions
   m_TagString: Untagged
@@ -93,7 +94,21 @@ BoxCollider:
   m_GameObject: {fileID: 1594503994068775560}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 9, y: 2.013996, z: 9}
   m_Center: {x: 0, y: 1.006998, z: 0}
+--- !u!64 &7007265993399447360
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594503994068775560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3249799334235133738, guid: ad6caf94ec1468048a6e754395d0bcb5, type: 3}
