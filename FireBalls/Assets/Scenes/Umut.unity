@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1240835403}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &44038409
 PrefabInstance:
@@ -164,7 +164,7 @@ PrefabInstance:
     - target: {fileID: 6323188161133455376, guid: 312cd58ee6088b7438b139c6eb2c4878,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6323188161133455376, guid: 312cd58ee6088b7438b139c6eb2c4878,
         type: 3}
@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -290,8 +290,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
+--- !u!1 &105608043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 105608045}
+  - component: {fileID: 105608044}
+  m_Layer: 0
+  m_Name: NpcManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &105608044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105608043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea5f8ed7c5c64e4d82ef6c06049c21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypointarray:
+  - {fileID: 887471735}
+  - {fileID: 1776834572}
+  - {fileID: 960594311}
+  - {fileID: 1196941827}
+--- !u!4 &105608045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105608043}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &115856093
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +387,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -390,6 +444,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1 &208185913
@@ -433,7 +492,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -490,6 +549,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1001 &237285560
@@ -502,7 +566,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8f04e41f13cdba34abbc8eab356e1b65,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f04e41f13cdba34abbc8eab356e1b65,
         type: 3}
@@ -517,7 +581,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8f04e41f13cdba34abbc8eab356e1b65,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.6434
+      value: 31.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f04e41f13cdba34abbc8eab356e1b65,
         type: 3}
@@ -600,7 +664,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
@@ -821,7 +885,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -877,6 +941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: paved road straight (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
@@ -973,7 +1042,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
@@ -1005,7 +1074,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2e79931aa98559b469e62a739a332980,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e79931aa98559b469e62a739a332980,
         type: 3}
@@ -1062,6 +1131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road turn (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e79931aa98559b469e62a739a332980,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e79931aa98559b469e62a739a332980, type: 3}
 --- !u!1 &441159253 stripped
@@ -1083,37 +1157,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9, y: 2.2705686, z: 9}
   m_Center: {x: 0, y: 1.1352843, z: 0}
---- !u!1 &455545702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 455545703}
-  m_Layer: 0
-  m_Name: SpawnPoint1 (8)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &455545703
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455545702}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.3, y: 0, z: -23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1240835403}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &471719412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,7 +1167,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
@@ -1144,7 +1187,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50
+      value: 50.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
@@ -1154,7 +1197,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.8
+      value: 17.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
@@ -1267,7 +1310,7 @@ Transform:
   m_Children:
   - {fileID: 1240835403}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &490702221
 MonoBehaviour:
@@ -1286,18 +1329,11 @@ MonoBehaviour:
   - {fileID: 208185914}
   - {fileID: 1830445510}
   - {fileID: 115856094}
-  - {fileID: 770512553}
-  - {fileID: 874884959}
-  - {fileID: 1038712062}
   - {fileID: 9693808}
-  - {fileID: 455545703}
-  - {fileID: 1712191776}
-  - {fileID: 1930025426}
-  - {fileID: 788960569}
   humanPrefabs:
   - {fileID: 963442423290097656, guid: a9a107de1d9e7c14b887c2cca03703e7, type: 3}
-  MaksSpawn: 10
-  DeathPoint: 10
+  MaksSpawn: 5
+  DeathPoint: 0
 --- !u!1001 &509195028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1308,7 +1344,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -1365,6 +1401,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1001 &562890813
@@ -1377,7 +1418,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -1434,6 +1475,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1 &580273021 stripped
@@ -1465,7 +1511,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 124ff3b18d6905a49b6a059db499be68,
         type: 3}
@@ -1587,7 +1633,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -1644,39 +1690,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
---- !u!1 &770512552
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 770512553}
-  m_Layer: 0
-  m_Name: SpawnPoint1 (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &770512553
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770512552}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.1, y: 0, z: -6.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1240835403}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &777072360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1687,7 +1707,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -1744,39 +1764,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
---- !u!1 &788960568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 788960569}
-  m_Layer: 0
-  m_Name: SpawnPoint1 (11)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &788960569
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788960568}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.55, y: 0, z: 3.0699997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1240835403}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1818,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &845792778 stripped
 GameObject:
@@ -1864,7 +1858,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.000002, y: 2.2705686, z: 9.000002}
   m_Center: {x: 0, y: 1.1352843, z: 0}
---- !u!1 &874884958
+--- !u!1 &887471734
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1872,28 +1866,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 874884959}
+  - component: {fileID: 887471735}
   m_Layer: 0
-  m_Name: SpawnPoint1 (5)
+  m_Name: Way
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &874884959
+--- !u!4 &887471735
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874884958}
+  m_GameObject: {fileID: 887471734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.299999, y: 0, z: -0.83000183}
+  m_LocalPosition: {x: 56.9, y: 2.2999992, z: 39.002953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1240835403}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &920728708 stripped
 GameObject:
@@ -1924,7 +1918,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -1981,8 +1975,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
+--- !u!1 &960594310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 960594311}
+  m_Layer: 0
+  m_Name: Way (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &960594311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960594310}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.2000008, y: 2.2999992, z: 39.002953}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1012935624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1993,7 +2023,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2e79931aa98559b469e62a739a332980,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e79931aa98559b469e62a739a332980,
         type: 3}
@@ -2050,39 +2080,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road turn (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e79931aa98559b469e62a739a332980,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e79931aa98559b469e62a739a332980, type: 3}
---- !u!1 &1038712061
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1038712062}
-  m_Layer: 0
-  m_Name: SpawnPoint1 (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1038712062
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038712061}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.9, y: 0, z: -14.700001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1240835403}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1067550386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2093,7 +2097,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -2150,6 +2154,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1 &1072025391 stripped
@@ -2181,7 +2190,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2e79931aa98559b469e62a739a332980,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e79931aa98559b469e62a739a332980,
         type: 3}
@@ -2238,8 +2247,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road turn
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e79931aa98559b469e62a739a332980,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e79931aa98559b469e62a739a332980, type: 3}
+--- !u!1 &1196941826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1196941827}
+  m_Layer: 0
+  m_Name: Way (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1196941827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196941826}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 57.8, y: 2.2999992, z: -3.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1240835402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,14 +2316,7 @@ Transform:
   - {fileID: 208185914}
   - {fileID: 1830445510}
   - {fileID: 115856094}
-  - {fileID: 770512553}
-  - {fileID: 874884959}
-  - {fileID: 1038712062}
   - {fileID: 9693808}
-  - {fileID: 455545703}
-  - {fileID: 1712191776}
-  - {fileID: 1930025426}
-  - {fileID: 788960569}
   m_Father: {fileID: 490702220}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2292,7 +2330,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -2349,6 +2387,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1001 &1431084169
@@ -2361,7 +2404,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -2418,6 +2461,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1001 &1436299591
@@ -2430,7 +2478,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -2487,6 +2535,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1 &1520189075 stripped
@@ -2531,7 +2584,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -2588,6 +2641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1 &1584962006 stripped
@@ -2638,7 +2696,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -2695,6 +2753,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1 &1658703074 stripped
@@ -2716,37 +2779,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.000002, y: 2.2705686, z: 9.000002}
   m_Center: {x: 0, y: 1.1352843, z: 0}
---- !u!1 &1712191775
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1712191776}
-  m_Layer: 0
-  m_Name: SpawnPoint1 (9)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1712191776
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712191775}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.1, y: 0, z: -10.299999}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1240835403}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1740724087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2757,7 +2789,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -2814,8 +2846,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
+--- !u!1 &1776834571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1776834572}
+  m_Layer: 0
+  m_Name: Way (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1776834572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776834571}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.2000008, y: 2.2999992, z: -4.397049}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1791379858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2826,7 +2894,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -2883,6 +2951,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
 --- !u!1 &1799697434 stripped
@@ -2914,7 +2987,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2e79931aa98559b469e62a739a332980,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e79931aa98559b469e62a739a332980,
         type: 3}
@@ -2971,6 +3044,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road turn (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e79931aa98559b469e62a739a332980,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e79931aa98559b469e62a739a332980, type: 3}
 --- !u!1 &1830445509
@@ -3003,6 +3081,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1240835403}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1836858081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1836858082}
+  m_Layer: 0
+  m_Name: WayPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1836858082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836858081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35.28585, y: -50.233604, z: -56.946823}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1902749325 stripped
 GameObject:
@@ -3052,7 +3161,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -3109,39 +3218,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: paved road straight (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac696e86351dc3469e759d62e474111, type: 3}
---- !u!1 &1930025425
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1930025426}
-  m_Layer: 0
-  m_Name: SpawnPoint1 (10)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1930025426
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930025425}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.200001, y: 0, z: -17.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1240835403}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950755826 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ac696e86351dc3469e759d62e474111,
@@ -3190,7 +3273,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ac696e86351dc3469e759d62e474111,
         type: 3}
@@ -3268,3 +3351,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9, y: 2.2705686, z: 9}
   m_Center: {x: 0, y: 1.1352843, z: 0}
+--- !u!114 &1989283700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989283695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 1eea9256292e0b84f952a30badca69a8, type: 2}
