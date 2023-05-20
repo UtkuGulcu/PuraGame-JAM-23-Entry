@@ -10,12 +10,12 @@ public class WindowQuestPointer : MonoBehaviour
 
 
     [SerializeField] private Camera uiCamera;
-    [SerializeField] private Sprite arrowSprite;
-    [SerializeField] private Sprite crossSprite;
-    private Vector3 targetPosition;
-    private RectTransform pointerRectTransform;
-    private Image pointerImage;
+    [SerializeField] private Sprite ArrowSprite;
+    [SerializeField] private Sprite CrossSprite;
+    
     private Vector3 Temp = new Vector3(0, 0, 500);
+    private List<Vector3> GumballMachinePositions;
+    private List<QuestPointer> questPointerList;
     
 
     private void Awake()
@@ -29,35 +29,74 @@ public class WindowQuestPointer : MonoBehaviour
             Destroy(this);
         }
 
-
+        questPointerList = new List<QuestPointer>();
+        GumballMachinePositions = new List<Vector3>();
         
-        pointerRectTransform = transform.Find("Pointer").GetComponent<RectTransform>();
-        pointerImage = transform.Find("Pointer").GetComponent<Image>();
 
     }
 
     private void Update()
     {
-        targetPosition = Temp;
-        if (Temp.z != 500)
+        foreach (QuestPointer questPointer in questPointerList)
         {
-            Vector3 toPosition = targetPosition;
-            Vector3 fromPosition = Camera.main.transform.position;
-            fromPosition.z = 0f; //KONTORL ET
-            Vector3 dir = (toPosition - fromPosition).normalized;
-            float angle = Helpers.GetAngleFromVectorFloat(dir);
-            pointerRectTransform.localEulerAngles = new Vector3(0, 0, angle);
+            questPointer.Update();
+        }
+        
+       
+    }
+
+    
+
+   
+
+   
+
+    public QuestPointer CreatePointer(Vector3 targetPosition) 
+    {
+        GameObject pointerGameObject = Instantiate(transform.Find("PointerTemplate").gameObject);
+        pointerGameObject.SetActive(true);
+        pointerGameObject.transform.SetParent(transform, false);
+        QuestPointer questPointer = new QuestPointer(targetPosition, pointerGameObject, ArrowSprite, CrossSprite,uiCamera);
+        questPointerList.Add(questPointer);
+        
+        return questPointer;
+    }
+
+    public class QuestPointer
+    {
+        private Camera uiCamera;
+        private GameObject pointerGameObject;
+        private Sprite ArrowSprite;
+        private Sprite CrossSprite;
+        private Vector3 TargetPosition;
+        private RectTransform pointerRectTransform;
+        private Image pointerImage;
+
+        public QuestPointer(Vector3 TargetPosition, GameObject pointerGameObject, Sprite ArrowSprite, Sprite CrossSprite, Camera uiCamera)
+        {
+            this.TargetPosition = TargetPosition;
+            this.pointerGameObject = pointerGameObject;
+            this.ArrowSprite = ArrowSprite;
+            this.CrossSprite = CrossSprite;
+            pointerRectTransform = pointerGameObject.GetComponent<RectTransform>();
+            pointerImage = pointerGameObject.GetComponent<Image>();
+            this.uiCamera = uiCamera;
+        }
+
+        public void Update()
+        {
+
 
             float borderSize = 100f;
 
-            Vector3 targetPositionScreenPoint = Camera.main.WorldToScreenPoint(targetPosition);
+            Vector3 targetPositionScreenPoint = Camera.main.WorldToScreenPoint(TargetPosition);
             bool isOffScreen = targetPositionScreenPoint.x <= borderSize || targetPositionScreenPoint.x >= Screen.width - borderSize || targetPositionScreenPoint.y <= borderSize || targetPositionScreenPoint.y >= Screen.height - borderSize;
             Debug.Log(isOffScreen + " " + targetPositionScreenPoint);
 
             if (isOffScreen)
             {
                 RotatePointerTowardsTargetPosition();
-                pointerImage.sprite = arrowSprite;
+                pointerImage.sprite = ArrowSprite;
                 Vector3 cappedTargetScreenPosition = targetPositionScreenPoint;
                 if (cappedTargetScreenPosition.x <= borderSize) cappedTargetScreenPosition.x = borderSize;
                 if (cappedTargetScreenPosition.x >= Screen.width - borderSize) cappedTargetScreenPosition.x = Screen.width - borderSize;
@@ -73,44 +112,32 @@ public class WindowQuestPointer : MonoBehaviour
 
             else
             {
-                pointerImage.sprite = crossSprite;
+                pointerImage.sprite = CrossSprite;
                 Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(targetPositionScreenPoint);
                 pointerRectTransform.position = pointerWorldPosition;
                 pointerRectTransform.localPosition = new Vector3(pointerRectTransform.localPosition.x, pointerRectTransform.localPosition.y, 0f);
                 pointerRectTransform.localEulerAngles = Vector3.zero;
 
             }
+        }
 
+        private void RotatePointerTowardsTargetPosition()
+        {
+            Vector3 toPosition = TargetPosition;
+            Vector3 fromPosition = Camera.main.transform.position;
+            fromPosition.z = 0f;
+            Vector3 dir = (toPosition - fromPosition).normalized;
+            float angle = Helpers.GetAngleFromVectorFloat(dir);
+            pointerRectTransform.localEulerAngles = new Vector3(0, 0, angle);
         }
     }
 
-    private void RotatePointerTowardsTargetPosition()
+
+
+    public void AddGumballMachineToList(Vector3 position)
     {
-        Vector3 toPosition = targetPosition;
-        Vector3 fromPosition = Camera.main.transform.position;
-        fromPosition.z = 0f;
-        Vector3 dir = (toPosition - fromPosition).normalized;
-        float angle = Helpers.GetAngleFromVectorFloat(dir);
-        pointerRectTransform.localEulerAngles = new Vector3(0, 0, angle); 
-    }
+        GumballMachinePositions.Add(position);
 
-   
-
-    public void Hide() //Doldurduðumuz þeker makinasýný iþaretlemeyi býraktýr.
-    {
-        gameObject.SetActive(false);
-
-    }
-
-    public void Show(Vector3 targetPosition) // Azalmýþ þeker makinasýnýn konumunu parametre olarak göndericez.
-    {
-        gameObject.SetActive(true);
-
-    }
-
-    public void ReceivePosition(Vector3 position)
-    {
-        Temp = position;
     }
 
 }

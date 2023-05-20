@@ -134,7 +134,7 @@ public class GumballMachine : MonoBehaviour, IInteractable
 
     public void SendPositionToWindowQuestPointer(Vector3 position)
     {
-        WindowQuestPointer.Instance.ReceivePosition(position);
+        WindowQuestPointer.Instance.AddGumballMachineToList(position);
     }
 
     private bool isConditionMet = false;
@@ -145,7 +145,7 @@ public class GumballMachine : MonoBehaviour, IInteractable
         {
             isConditionMet = true; //Þeker Makinasý doldurulduktan sonra bu bool false dönmeli
             Vector3 position = transform.position;
-            WindowQuestPointer.Instance.ReceivePosition(position);
+            WindowQuestPointer.Instance.CreatePointer(position);
         }
     }
 
