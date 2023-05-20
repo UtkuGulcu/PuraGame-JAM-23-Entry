@@ -19,7 +19,7 @@ public class GumballMachine : MonoBehaviour, IInteractable
     [SerializeField] private int timeToDecreaseGum;
     [SerializeField] private float decreaseAmount;
     
-    public float fillAmount;
+    [HideInInspector] public float fillAmount;
 
     private void Start()
     {
