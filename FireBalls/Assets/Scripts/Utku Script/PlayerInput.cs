@@ -42,14 +42,12 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            PlayerController.Instance.LockMovement();
             movementLocked = true;
             OnInteractKeyDown?.Invoke(this, EventArgs.Empty);
         }
 
         if (Input.GetKeyUp(KeyCode.E))
         {
-            PlayerController.Instance.UnlockMovement();
             movementLocked = false;
             OnInteractKeyUp?.Invoke(this, EventArgs.Empty);
         }

@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [SerializeField] private float rotationSpeed;
 
-    //private Rigidbody rbPlayer;
     private Quaternion toRotation;
     private CharacterController CharacterController;
     private bool canMove;
@@ -28,7 +27,6 @@ public class PlayerController : MonoBehaviour
             Destroy(this);
         }
 
-        //rbPlayer = GetComponent<Rigidbody>();
         CharacterController = GetComponent<CharacterController>();
     }
 
@@ -37,16 +35,6 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (!canMove)
-    //        return;
-
-
-    //    Vector3 inputVector = PlayerInput.Instance.GetInputVector();
-    //    rbPlayer.velocity = new Vector3(inputVector.x * movementSpeed * Time.deltaTime, rbPlayer.velocity.y,
-    //        inputVector.z * movementSpeed * Time.deltaTime);
-    //}
 
     private void Update()
     {
@@ -88,5 +76,17 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement()
     {
         canMove = true;
+    }
+
+    public void DisableCharacterController()
+    {
+        CharacterController.detectCollisions = false;
+        CharacterController.enabled = false;
+    }
+
+    public void EnableCharacterController()
+    {
+        CharacterController.detectCollisions = true;
+        CharacterController.enabled = true;
     }
 }

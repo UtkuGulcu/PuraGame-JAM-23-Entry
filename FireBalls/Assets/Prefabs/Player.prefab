@@ -1216,6 +1216,7 @@ MonoBehaviour:
   interactionLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  visuals: {fileID: 525705203565011722}
 --- !u!114 &3358564014790287885
 MonoBehaviour:
   m_ObjectHideFlags: 0
