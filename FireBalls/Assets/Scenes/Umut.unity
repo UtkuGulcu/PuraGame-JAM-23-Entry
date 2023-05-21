@@ -2785,7 +2785,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Please proceed towards the factory. To unlock the factory, you need 10000
     coins. After obtaining the required amount of coins, please interact with the
-    factory by pressing the "E" key.
+    factory by pressing the "E" key. This way you would complete the tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3974,7 +3974,7 @@ PrefabInstance:
     - target: {fileID: 5246605820266328995, guid: 70e2e5a90ce44db42b9d43fb45b290b9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.074440606
+      value: 0.07444061
       objectReference: {fileID: 0}
     - target: {fileID: 5246605820266328995, guid: 70e2e5a90ce44db42b9d43fb45b290b9,
         type: 3}
@@ -3984,7 +3984,7 @@ PrefabInstance:
     - target: {fileID: 5246605820266328995, guid: 70e2e5a90ce44db42b9d43fb45b290b9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0744406
+      value: -0.074440606
       objectReference: {fileID: 0}
     - target: {fileID: 5246605820369080812, guid: 70e2e5a90ce44db42b9d43fb45b290b9,
         type: 3}
@@ -4695,21 +4695,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222432777629256778, guid: 72f9509b6fada9a43bf3e406822ca0fe,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.48735
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222432777629256778, guid: 72f9509b6fada9a43bf3e406822ca0fe,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.48735
-      objectReference: {fileID: 0}
-    - target: {fileID: 4222432777629256778, guid: 72f9509b6fada9a43bf3e406822ca0fe,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.48735
       objectReference: {fileID: 0}
     - target: {fileID: 4222432777629256778, guid: 72f9509b6fada9a43bf3e406822ca0fe,
         type: 3}

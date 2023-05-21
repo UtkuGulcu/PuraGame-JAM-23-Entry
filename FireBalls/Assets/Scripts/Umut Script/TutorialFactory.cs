@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class TutorialFactory : MonoBehaviour
+public class TutorialFactory : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void Interact()
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StopInteracting()
     {
-        
+        throw new System.NotImplementedException();
+    }
+
+    public void ShowInteract()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void HideInteract()
+    {
+        throw new System.NotImplementedException();
     }
 }
