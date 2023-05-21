@@ -100,7 +100,18 @@ public class Car : MonoBehaviour, IInteractable
         Player.Instance.GetOutOfCar();
     }
 
+
     public void StopInteracting()
+    {
+        
+    }
+
+    public void ShowInteract()
+    {
+        
+    }
+
+    public void HideInteract()
     {
         
     }

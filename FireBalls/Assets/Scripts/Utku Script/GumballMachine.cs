@@ -69,6 +69,8 @@ public class GumballMachine : MonoBehaviour, IInteractable
         StartCoroutine(WaitForDecreaseCoroutine);
     }
 
+    
+
     private IEnumerator StartRefillingGum()
     {
         fillAmount += 5;
@@ -115,5 +117,16 @@ public class GumballMachine : MonoBehaviour, IInteractable
         {
             fillAmount = fillAmount
         });
+    }
+
+
+    public void ShowInteract()
+    {
+
+    }
+
+    public void HideInteract()
+    {
+
     }
 }

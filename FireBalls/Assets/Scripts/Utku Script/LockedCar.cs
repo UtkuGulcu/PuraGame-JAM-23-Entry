@@ -26,6 +26,19 @@ public class LockedCar : MonoBehaviour, IInteractable
         }
     }
 
+    
+
+    public void ShowInteract()
+    {
+        Debug.Log("Show buy car UI");
+    }
+
+    public void HideInteract()
+    {
+        Debug.Log("Hide buy car UI");
+    }
+
+
     public void StopInteracting()
     {
 

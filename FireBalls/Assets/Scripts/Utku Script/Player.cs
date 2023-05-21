@@ -93,11 +93,19 @@ public class Player : MonoBehaviour
         visuals.SetActive(true);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.transform.TryGetComponent(out IInteractable interactable))
         {
+            interactable.ShowInteract();
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.TryGetComponent(out IInteractable interactable))
+        {
+            interactable.HideInteract();
         }
     }
 }
