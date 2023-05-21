@@ -2189,60 +2189,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 906265914}
     m_Modifications:
-    - target: {fileID: 290329289233074946, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 290329289233074946, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -52
-      objectReference: {fileID: 0}
     - target: {fileID: 822313954915805108, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
         type: 3}
       propertyPath: m_Name
       value: Coin UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557426070672635381, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557426070672635381, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557426070672635381, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557426070672635381, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557426070672635381, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557426070672635381, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557426070672635381, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -220
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557426070672635381, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 9082189295303054332, guid: 8f58cc47cb4e7dc449abf9a7d1a31fb0,
         type: 3}
@@ -2579,7 +2529,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Please proceed towards the Gumball Machine and interact with it by pressing
-    the "E" key. This way, you can refill the machine.
+    the "E" key. This way, you can refill the machine. If the bar on the Gumball
+    Machine resets, the Gumball Machine will stop dispensing coins. (The Gumball
+    Machine dispenses 25 coins every 5 seconds.)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5274,7 +5226,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 757767143425655747}
-  - component: {fileID: 130588580038383998}
   - component: {fileID: 130588580038383999}
   - component: {fileID: 757767143425655748}
   m_Layer: 3
@@ -5284,24 +5235,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &130588580038383998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130588580038383993}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12a94747132efbb4eb2f0dc1b75a7001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rbSphere: {fileID: 940856836083179964}
-  forwardSpeed: 400000
-  reverseSpeed: 200000
-  turnSpeed: 20
-  gravity: 2000
-  getOffPoint: {fileID: 940856836152893406}
 --- !u!65 &130588580038383999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5709,7 +5642,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b122ae1c1e28fd94c93f5adaebda3564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Txt: {fileID: 0}
+  arabaAcmaTxt: {fileID: 710728817}
+  fabrikaAcmaTxt: {fileID: 1066780468}
 --- !u!33 &795196792591607207
 MeshFilter:
   m_ObjectHideFlags: 0

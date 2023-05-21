@@ -6,17 +6,35 @@ public class Audio : MonoBehaviour
 {
     public static Audio Instance {get ; private set;}
 
-    private AudioSource footstepSound;
-    private AudioSource carSound;
-    private AudioSource scoreSound;
+    [SerializeField] private AudioSource gameLoop;
+    [SerializeField] private AudioSource coin;
+    [SerializeField] private AudioSource gumballMachineBuild;
+
     private void Awake()
     {
-        footstepSound = GetComponent<AudioSource>();
-        carSound = GetComponent<AudioSource>();
-        scoreSound = GetComponent<AudioSource>();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
-    private void Update()
-    {
 
+    //public void PlayGameLoop()
+    //{
+    //    gameLoop.Play();
+    //}
+
+    public void PlayCoin()
+    {
+        coin.Play();
     }
+
+    public void PlayGumballMachineBuild()
+    {
+        gumballMachineBuild.Play();
+    }
+
 }

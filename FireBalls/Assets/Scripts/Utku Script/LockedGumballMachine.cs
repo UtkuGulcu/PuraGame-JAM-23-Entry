@@ -12,6 +12,8 @@ public class LockedGumballMachine : MonoBehaviour, IInteractable
         {
             Instantiate(gumballMachinePrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            ResourceManager.Instance.DecreaseMoney(ResourceManager.Instance.GetGumballMachinePrice());
+            Audio.Instance.PlayGumballMachineBuild();
         }
         else
         {

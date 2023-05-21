@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TutorialLockGumballMachine : MonoBehaviour
+public class TutorialLockGumballMachine : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject gumballMachinePrefab;
     [SerializeField] private TMP_Text makineCalistirma;
@@ -17,6 +17,7 @@ public class TutorialLockGumballMachine : MonoBehaviour
             Destroy(gameObject);
             makineCalistirma.gameObject.SetActive(false);
             arabaAcma.gameObject.SetActive(true);
+            ResourceManager.Instance.IncreaseMoney(ResourceManager.Instance.GetCarPrice());
         }
         else
         {

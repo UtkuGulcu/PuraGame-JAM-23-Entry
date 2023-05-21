@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField] private TMP_Text cointext;
+    //[SerializeField] private TMP_Text cointext;
+    private TMP_Text cointext;
 
     private void Awake()
     {
@@ -26,6 +27,10 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 100;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        cointext = GameObject.FindGameObjectWithTag("Coin Count").GetComponent<TMP_Text>();
+
+        
     }
 
     public void UpdateMoney()

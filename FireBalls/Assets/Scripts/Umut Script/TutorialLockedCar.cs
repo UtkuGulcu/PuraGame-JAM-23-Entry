@@ -7,21 +7,31 @@ using TMPro;
 public class TutorialLockedCar : MonoBehaviour, IInteractable
 {
     private Car carScript;
-    [SerializeField] private TMP_Text Txt;
+    //[SerializeField] private TMP_Text Txt;
+    [SerializeField] private TMP_Text arabaAcmaTxt;
+    [SerializeField] private TMP_Text fabrikaAcmaTxt;
 
     private void Awake()
     {
-        carScript = GetComponent<Car>();
+        //carScript = GetComponent<Car>();
     }
 
     public void Interact()
     {
         if (ResourceManager.Instance.GetMoney() >= ResourceManager.Instance.GetCarPrice())
         {
-            carScript.enabled = true;
-            Destroy(this);
+            //carScript.enabled = true;
+            
             Debug.Log("Car unlocked");
-            Txt.enabled = true;
+            //Txt.enabled = true;
+
+            arabaAcmaTxt.gameObject.SetActive(false);
+            fabrikaAcmaTxt.gameObject.SetActive(true);
+
+            ResourceManager.Instance.DecreaseMoney(ResourceManager.Instance.GetCarPrice());
+            ResourceManager.Instance.IncreaseMoney(ResourceManager.Instance.GetFactoryPrice());
+
+            Destroy(this);
         }
         else
         {
