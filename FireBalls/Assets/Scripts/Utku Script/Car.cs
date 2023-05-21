@@ -63,6 +63,7 @@ public class Car : MonoBehaviour, IInteractable
         if (isPlayerInCar)
         {
             Player.Instance.transform.position = transform.position;
+            Player.Instance.transform.rotation = transform.rotation;
         }
     }
 

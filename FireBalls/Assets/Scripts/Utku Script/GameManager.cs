@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 144;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     
