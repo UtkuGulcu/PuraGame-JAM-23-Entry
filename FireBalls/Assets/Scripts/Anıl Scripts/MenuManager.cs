@@ -44,7 +44,12 @@ public class MenuManager : MonoBehaviour
     #region Start&Quit
     public void StartGameButton()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(1);
+    }
+
+    public void IntroExitButton()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void ExitGameButton()
