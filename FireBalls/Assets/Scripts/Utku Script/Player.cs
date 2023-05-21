@@ -92,4 +92,12 @@ public class Player : MonoBehaviour
         PlayerController.Instance.EnableCharacterController();
         visuals.SetActive(true);
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.TryGetComponent(out IInteractable interactable))
+        {
+
+        }
+    }
 }

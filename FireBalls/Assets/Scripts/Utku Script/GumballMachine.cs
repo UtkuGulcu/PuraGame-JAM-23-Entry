@@ -99,7 +99,7 @@ public class GumballMachine : MonoBehaviour, IInteractable
 
         if (fillAmount > 0)
         {
-            ResourceManager.Instance.IncreaseMoney(5);
+            ResourceManager.Instance.IncreaseMoney(25);
             Debug.Log(ResourceManager.Instance.GetMoney());
         }
 
