@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TutorialLockedCar : MonoBehaviour
+public class TutorialLockedCar : MonoBehaviour, IInteractable
 {
     private Car carScript;
     [SerializeField] private TMP_Text Txt;
