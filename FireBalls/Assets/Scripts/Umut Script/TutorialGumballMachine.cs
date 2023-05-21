@@ -63,13 +63,13 @@ public class TutorialGumballMachine : MonoBehaviour , IInteractable
         StopCoroutine(DecreaseGumCoroutine);
         StartRefillingGumCoroutine = StartRefillingGum();
         StartCoroutine(StartRefillingGumCoroutine);
+        
+
         if(TutorialManager.Instance.Contoller == false)
         {
             TutorialManager.Instance.Contoller = true;
-            txtnext.enabled = false;
-            txt.enabled = true;
-            
-
+            txtnext.gameObject.SetActive(true);
+            txt.gameObject.SetActive(false);
         }
     }
 
