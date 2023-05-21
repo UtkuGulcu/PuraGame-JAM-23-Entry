@@ -1329,6 +1329,7 @@ MonoBehaviour:
   isMoving: 0
   movementSpeed: 8
   rotationSpeed: 720
+  gravity: 200
 --- !u!143 &3015065623189093933
 CharacterController:
   m_ObjectHideFlags: 0

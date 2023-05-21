@@ -52,6 +52,11 @@ public class PlayerInput : MonoBehaviour
             movementLocked = false;
             OnInteractKeyUp?.Invoke(this, EventArgs.Empty);
         }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ResourceManager.Instance.IncreaseMoney(5000);
+        }
     }
 
     public Vector3 GetInputVector()

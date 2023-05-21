@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private float movementSpeed;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float gravity;
 
     private Quaternion toRotation;
     private CharacterController CharacterController;
@@ -49,6 +50,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 inputVector = PlayerInput.Instance.GetInputVector();
         isMoving = inputVector != Vector3.zero;
+
+        inputVector.y -= gravity * Time.deltaTime;
 
         CharacterController.Move(inputVector * (Time.deltaTime * movementSpeed));
     }

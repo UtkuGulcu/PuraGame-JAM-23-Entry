@@ -60,6 +60,9 @@ public class Player : MonoBehaviour
 
         foreach (Collider interactedCollider in interactedColliders)
         {
+            if (interactedCollider == null)
+                return;
+
             if (interactedCollider.TryGetComponent(out IInteractable interactable))
             {
                 interactable.StopInteracting();

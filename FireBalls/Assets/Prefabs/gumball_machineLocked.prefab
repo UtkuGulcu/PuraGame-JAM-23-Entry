@@ -405,6 +405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9525ef3f6c1f7234580ac176d824f3d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gumballMachinePrefab: {fileID: 828569501809099172, guid: 405f0c33618c72641ab97377238cecb6,
+    type: 3}
 --- !u!1 &972506878852497463
 GameObject:
   m_ObjectHideFlags: 0
