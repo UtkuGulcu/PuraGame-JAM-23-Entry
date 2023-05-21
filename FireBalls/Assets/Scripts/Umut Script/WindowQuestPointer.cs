@@ -114,11 +114,12 @@ public class WindowQuestPointer : MonoBehaviour
             float borderSize = 100f;
 
             Vector3 targetPositionScreenPoint = Camera.main.WorldToScreenPoint(TargetPosition);
+            Debug.Log(targetPositionScreenPoint);
             bool isOffScreen = targetPositionScreenPoint.x <= borderSize || targetPositionScreenPoint.x >= Screen.width - borderSize || targetPositionScreenPoint.y <= borderSize || targetPositionScreenPoint.y >= Screen.height - borderSize;
-            Debug.Log(isOffScreen + " " + targetPositionScreenPoint);
+            
 
-            if (isOffScreen)
-            {
+            //if (isOffScreen)
+           //{
                 RotatePointerTowardsTargetPosition();
                 pointerImage.sprite = ArrowSprite;
                 Vector3 cappedTargetScreenPosition = targetPositionScreenPoint;
@@ -132,17 +133,17 @@ public class WindowQuestPointer : MonoBehaviour
                 pointerRectTransform.localPosition = new Vector3(pointerRectTransform.localPosition.x, pointerRectTransform.localPosition.y, 0f);
 
 
-            }
+            //}
 
-            else
-            {
-                pointerImage.sprite = CrossSprite;
-                Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(targetPositionScreenPoint);
-                pointerRectTransform.position = pointerWorldPosition;
-                pointerRectTransform.localPosition = new Vector3(pointerRectTransform.localPosition.x, pointerRectTransform.localPosition.y, 0f);
-                pointerRectTransform.localEulerAngles = Vector3.zero;
+            //else
+            //{
+            //    pointerImage.sprite = CrossSprite;
+            //    Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(targetPositionScreenPoint);
+            //    pointerRectTransform.position = pointerWorldPosition;
+            //    pointerRectTransform.localPosition = new Vector3(pointerRectTransform.localPosition.x, pointerRectTransform.localPosition.y, 0f);
+            //    pointerRectTransform.localEulerAngles = Vector3.zero;
 
-            }
+            //}
         }
 
         private void RotatePointerTowardsTargetPosition()
