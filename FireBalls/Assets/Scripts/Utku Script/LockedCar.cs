@@ -17,7 +17,8 @@ public class LockedCar : MonoBehaviour, IInteractable
         if (ResourceManager.Instance.GetMoney() >= ResourceManager.Instance.GetCarPrice())
         {
             carScript.enabled = true;
-            this.enabled = false;
+            Destroy(this);
+            Debug.Log("Car unlocked");
         }
         else
         {
