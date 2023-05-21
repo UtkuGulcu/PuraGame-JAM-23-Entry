@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPrice: 5000
   factoryPrice: 10000
+  gumballMachine: 80
