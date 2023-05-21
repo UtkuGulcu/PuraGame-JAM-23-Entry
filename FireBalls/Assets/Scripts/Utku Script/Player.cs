@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
 
     public void GetInCar()
     {
+        PlayerInput.Instance.LockMovement();
         PlayerController.Instance.DisableCharacterController();
         PlayerController.Instance.enabled = false;
         visuals.SetActive(false);
@@ -82,6 +83,7 @@ public class Player : MonoBehaviour
 
     public void GetOutOfCar()
     {
+        PlayerInput.Instance.UnlockMovement();
         PlayerController.Instance.enabled = true;
         PlayerController.Instance.EnableCharacterController();
         visuals.SetActive(true);

@@ -52,6 +52,7 @@ MonoBehaviour:
   forwardSpeed: 400000
   reverseSpeed: 200000
   turnSpeed: 20
+  gravity: 2000
   getOffPoint: {fileID: 940856835269831748}
 --- !u!65 &130588579709364965
 BoxCollider:

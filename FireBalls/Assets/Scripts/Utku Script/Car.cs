@@ -12,6 +12,7 @@ public class Car : MonoBehaviour, IInteractable
     [SerializeField] private float forwardSpeed;
     [SerializeField] private float reverseSpeed;
     [SerializeField] private float turnSpeed;
+    [SerializeField] private float gravity;
     [SerializeField] private Transform getOffPoint;
 
     private bool isPlayerInCar;
@@ -32,8 +33,13 @@ public class Car : MonoBehaviour, IInteractable
 
         if (isPlayerInCar)
         {
-            verticalInput = PlayerInput.Instance.GetInputVector().z;
-            horizontalInput = PlayerInput.Instance.GetInputVector().x;
+            //verticalInput = PlayerInput.Instance.GetInputVector().z;
+            //horizontalInput = PlayerInput.Instance.GetInputVector().x;
+
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+
+            Debug.Log(verticalInput);
 
             verticalInput *= verticalInput > 0 ? forwardSpeed : reverseSpeed;
             verticalInput *= Time.deltaTime;
@@ -62,9 +68,13 @@ public class Car : MonoBehaviour, IInteractable
 
     private void FixedUpdate()
     {
-        Vector3 force = transform.forward * verticalInput;
-        force *= Time.deltaTime;
-        rbSphere.AddForce(force, ForceMode.Acceleration);
+        if (isPlayerInCar)
+        {
+            Vector3 force = transform.forward * verticalInput;
+            force *= Time.deltaTime;
+            rbSphere.AddForce(force, ForceMode.Acceleration);
+            rbSphere.AddForce(Vector3.down * (gravity * Time.deltaTime));
+        }
     }
 
     public void Interact()

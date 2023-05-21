@@ -58,4 +58,14 @@ public class PlayerInput : MonoBehaviour
     {
         return inputVector.normalized;
     }
+
+    public void LockMovement()
+    {
+        movementLocked = true;
+    }
+
+    public void UnlockMovement()
+    {
+        movementLocked = false;
+    }
 }
