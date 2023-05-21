@@ -21,7 +21,6 @@ public class Car : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        Application.targetFrameRate = 144;
         rbSphere.transform.parent = null;
         BoxCollider colliderCar = GetComponent<BoxCollider>();
         SphereCollider colliderMotorSphere = rbSphere.gameObject.GetComponent<SphereCollider>();
@@ -38,8 +37,6 @@ public class Car : MonoBehaviour, IInteractable
 
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
-
-            Debug.Log(verticalInput);
 
             verticalInput *= verticalInput > 0 ? forwardSpeed : reverseSpeed;
             verticalInput *= Time.deltaTime;

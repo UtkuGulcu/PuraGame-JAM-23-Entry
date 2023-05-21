@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
 
         foreach (Collider interactedCollider in interactedColliders)
         {
+
             if (interactedCollider.TryGetComponent(out IInteractable interactable))
             {
                 interactable.Interact();

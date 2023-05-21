@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-
+    [SerializeField] private int carPrice;
+    [SerializeField] private int factoryPrice;
     public enum ResourceType
     {
         Money
@@ -45,5 +46,15 @@ public class ResourceManager : MonoBehaviour
     public void DecreaseMoney(int amount)
     {
         Resources[ResourceType.Money] -= amount;
+    }
+
+    public int GetCarPrice()
+    {
+        return carPrice;
+    }
+
+    public int GetFactoryPrice()
+    {
+        return factoryPrice;
     }
 }
