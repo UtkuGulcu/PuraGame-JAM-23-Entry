@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,7 +50,13 @@ public class MenuManager : MonoBehaviour
 
     public void IntroExitButton()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
+    }
+
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ExitGameButton()

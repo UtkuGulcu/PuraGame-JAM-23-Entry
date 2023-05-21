@@ -7,8 +7,7 @@ using UnityEngine;
 public class LockedCar : MonoBehaviour, IInteractable
 {
     private Car carScript;
-    [SerializeField] private TMP_Text arabaAcmaTxt;
-    [SerializeField] private TMP_Text fabrikaAcmaTxt;
+    
 
     private void Awake()
     {
@@ -22,9 +21,6 @@ public class LockedCar : MonoBehaviour, IInteractable
             carScript.enabled = true;
             Destroy(this);
             Debug.Log("Car unlocked");
-            arabaAcmaTxt.gameObject.SetActive(false);
-            fabrikaAcmaTxt.gameObject.SetActive(true);
-            ResourceManager.Instance.IncreaseMoney(10000);
         }
         else
         {

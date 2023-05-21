@@ -45,6 +45,8 @@ public class ResourceManager : MonoBehaviour
     {
         Resources[ResourceType.Money] += amount;
         GameManager.Instance.UpdateMoney();
+
+        Audio.Instance.PlayCoin();
         
     }
 
