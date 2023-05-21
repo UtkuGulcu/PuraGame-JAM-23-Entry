@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
+
 
 public class Car : MonoBehaviour, IInteractable
 {
@@ -10,13 +13,14 @@ public class Car : MonoBehaviour, IInteractable
     [SerializeField] private float reverseSpeed;
     [SerializeField] private float turnSpeed;
     [SerializeField] private Transform getOffPoint;
-    
+
     private bool isPlayerInCar;
     private float verticalInput;
     private float horizontalInput;
 
     private void Start()
     {
+        Application.targetFrameRate = 144;
         rbSphere.transform.parent = null;
         BoxCollider colliderCar = GetComponent<BoxCollider>();
         SphereCollider colliderMotorSphere = rbSphere.gameObject.GetComponent<SphereCollider>();
@@ -25,6 +29,7 @@ public class Car : MonoBehaviour, IInteractable
 
     private void Update()
     {
+
         if (isPlayerInCar)
         {
             verticalInput = PlayerInput.Instance.GetInputVector().z;
@@ -57,7 +62,9 @@ public class Car : MonoBehaviour, IInteractable
 
     private void FixedUpdate()
     {
-        rbSphere.AddForce(transform.forward * verticalInput, ForceMode.Acceleration);
+        Vector3 force = transform.forward * verticalInput;
+        force *= Time.deltaTime;
+        rbSphere.AddForce(force, ForceMode.Acceleration);
     }
 
     public void Interact()

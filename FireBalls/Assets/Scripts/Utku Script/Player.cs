@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
 
         Vector3 boxSize = new Vector3(1.5f, 2f, 1.5f);
 
-        interactedColliders = Physics.OverlapBox(transform.position, boxSize, Quaternion.identity, interactionLayerMask);
+        interactedColliders = Physics.OverlapBox(transform.position, boxSize, Quaternion.identity);
 
         foreach (Collider interactedCollider in interactedColliders)
         {

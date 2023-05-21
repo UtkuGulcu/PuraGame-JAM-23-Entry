@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 824743598511910684}
   - component: {fileID: 836204127994870354}
   - component: {fileID: 4444095579473965027}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: gumball_machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

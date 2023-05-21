@@ -42,6 +42,7 @@ public class GumballMachine : MonoBehaviour, IInteractable
     {
         yield return Helpers.GetWaitForEndOfFrame();
         fillAmount -= Time.deltaTime * decreaseSpeed;
+        Debug.Log($"{transform.name}'s fill amount: {fillAmount}");
         fillAmount = Mathf.Clamp(fillAmount, 0, 100);
 
         InvokeFillAmountChanged();
