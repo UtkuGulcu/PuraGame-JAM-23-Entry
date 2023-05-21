@@ -33,6 +33,7 @@ public class ResourceManager : MonoBehaviour
     private void Start()
     {
         Resources[ResourceType.Money] = 0;
+        GameManager.Instance.UpdateMoney();
     }
 
     public int GetMoney()
