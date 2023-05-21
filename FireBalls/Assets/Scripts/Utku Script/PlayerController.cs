@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [SerializeField] private float rotationSpeed;
 
-    private Rigidbody rbPlayer;
     private Quaternion toRotation;
+    private CharacterController CharacterController;
+    private bool canMove;
 
     private void Awake()
     {
@@ -25,29 +27,66 @@ public class PlayerController : MonoBehaviour
             Destroy(this);
         }
 
-        rbPlayer = GetComponent<Rigidbody>();
-
+        CharacterController = GetComponent<CharacterController>();
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-        Vector3 inputVector = PlayerInput.Instance.GetInputVector();
-        rbPlayer.velocity = new Vector3(inputVector.x * movementSpeed * Time.deltaTime, rbPlayer.velocity.y,
-            inputVector.z * movementSpeed * Time.deltaTime);
+        canMove = true;
     }
+
 
     private void Update()
     {
-        Vector3 inputVector = PlayerInput.Instance.GetInputVector();
+        if (!canMove)
+            return;
 
+        HandleMovement();
+        HandleRotation();
+    }
+
+    private void HandleMovement()
+    {
+        Vector3 inputVector = PlayerInput.Instance.GetInputVector();
         isMoving = inputVector != Vector3.zero;
 
+
+        CharacterController.Move(inputVector * (Time.deltaTime * movementSpeed));
+    }
+
+    private void HandleRotation()
+    {
         if (isMoving)
         {
+            Vector3 inputVector = PlayerInput.Instance.GetInputVector();
             toRotation = Quaternion.LookRotation(inputVector, Vector3.up);
-            
+
         }
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+    }
+
+    public void LockMovement()
+    {
+        canMove = false;
+        CharacterController.Move(Vector3.zero);
+        isMoving = false;
+    }
+
+    public void UnlockMovement()
+    {
+        canMove = true;
+    }
+
+    public void DisableCharacterController()
+    {
+        CharacterController.detectCollisions = false;
+        CharacterController.enabled = false;
+    }
+
+    public void EnableCharacterController()
+    {
+        CharacterController.detectCollisions = true;
+        CharacterController.enabled = true;
     }
 }
