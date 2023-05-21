@@ -7,6 +7,8 @@ public class ResourceManager : MonoBehaviour
 {
     [SerializeField] private int carPrice;
     [SerializeField] private int factoryPrice;
+    [SerializeField] private int gumballMachine;
+
     public enum ResourceType
     {
         Money
@@ -56,5 +58,10 @@ public class ResourceManager : MonoBehaviour
     public int GetFactoryPrice()
     {
         return factoryPrice;
+    }
+
+    public int GetGumballMachinePrice()
+    {
+        return gumballMachine;
     }
 }
