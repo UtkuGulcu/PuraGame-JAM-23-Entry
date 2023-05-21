@@ -40,12 +40,13 @@ public class Player : MonoBehaviour
     {
         PlayerController.Instance.LockMovement();
 
-        Vector3 boxSize = new Vector3(1.5f, 2f, 1.5f);
+        Vector3 boxSize = new Vector3(2, 2f, 2);
 
-        interactedColliders = Physics.OverlapBox(transform.position, boxSize, Quaternion.identity, interactionLayerMask);
+        interactedColliders = Physics.OverlapBox(transform.position, boxSize, Quaternion.identity);
 
         foreach (Collider interactedCollider in interactedColliders)
         {
+
             if (interactedCollider.TryGetComponent(out IInteractable interactable))
             {
                 interactable.Interact();
@@ -59,6 +60,9 @@ public class Player : MonoBehaviour
 
         foreach (Collider interactedCollider in interactedColliders)
         {
+            if (interactedCollider == null)
+                return;
+
             if (interactedCollider.TryGetComponent(out IInteractable interactable))
             {
                 interactable.StopInteracting();
@@ -70,11 +74,12 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position, new Vector3(3, 2, 3));
+        Gizmos.DrawWireCube(transform.position, new Vector3(4, 2, 4));
     }
 
     public void GetInCar()
     {
+        PlayerInput.Instance.LockMovement();
         PlayerController.Instance.DisableCharacterController();
         PlayerController.Instance.enabled = false;
         visuals.SetActive(false);
@@ -82,8 +87,25 @@ public class Player : MonoBehaviour
 
     public void GetOutOfCar()
     {
+        PlayerInput.Instance.UnlockMovement();
         PlayerController.Instance.enabled = true;
         PlayerController.Instance.EnableCharacterController();
         visuals.SetActive(true);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.TryGetComponent(out IInteractable interactable))
+        {
+            interactable.ShowInteract();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.TryGetComponent(out IInteractable interactable))
+        {
+            interactable.HideInteract();
+        }
     }
 }

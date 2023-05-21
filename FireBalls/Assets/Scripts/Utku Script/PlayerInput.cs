@@ -33,7 +33,8 @@ public class PlayerInput : MonoBehaviour
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             float verticalInput = Input.GetAxisRaw("Vertical");
 
-            inputVector = new Vector3(horizontalInput, 0, verticalInput);
+            inputVector = Camera.main.transform.right * horizontalInput + Camera.main.transform.forward * verticalInput;
+            inputVector.y = 0;
         }
         else
         {
@@ -51,10 +52,25 @@ public class PlayerInput : MonoBehaviour
             movementLocked = false;
             OnInteractKeyUp?.Invoke(this, EventArgs.Empty);
         }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ResourceManager.Instance.IncreaseMoney(5000);
+        }
     }
 
     public Vector3 GetInputVector()
     {
         return inputVector.normalized;
+    }
+
+    public void LockMovement()
+    {
+        movementLocked = true;
+    }
+
+    public void UnlockMovement()
+    {
+        movementLocked = false;
     }
 }

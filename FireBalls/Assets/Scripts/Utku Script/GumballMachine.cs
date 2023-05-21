@@ -67,12 +67,9 @@ public class GumballMachine : MonoBehaviour, IInteractable
 
         WaitForDecreaseCoroutine = WaitForDecrease();
         StartCoroutine(WaitForDecreaseCoroutine);
-        isConditionMet = false;
-        if(fillAmount >= 50)
-        {
-            WindowQuestPointer.Instance.DestroyPointer(transform.position);
-        }
     }
+
+    
 
     private IEnumerator StartRefillingGum()
     {
@@ -104,7 +101,7 @@ public class GumballMachine : MonoBehaviour, IInteractable
 
         if (fillAmount > 0)
         {
-            ResourceManager.Instance.IncreaseMoney(100);
+            ResourceManager.Instance.IncreaseMoney(25);
             Debug.Log(ResourceManager.Instance.GetMoney());
         }
 
@@ -123,20 +120,13 @@ public class GumballMachine : MonoBehaviour, IInteractable
     }
 
 
-
-    private bool isConditionMet = false;
-
-    private void Update()
+    public void ShowInteract()
     {
-        if (!isConditionMet && fillAmount < 50)
-        {
-            isConditionMet = true; //Þeker Makinasý doldurulduktan sonra bu bool false dönmeli
-            Vector3 position = transform.position;
-            WindowQuestPointer.Instance.CreatePointer(position);
-        }
+
     }
 
+    public void HideInteract()
+    {
 
-
-
+    }
 }

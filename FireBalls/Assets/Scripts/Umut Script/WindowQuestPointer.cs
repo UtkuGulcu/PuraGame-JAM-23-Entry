@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,14 +36,18 @@ public class WindowQuestPointer : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        uiCamera.depth = 0;
+        Camera.main.depth = 0;
+    }
+
     private void Update()
     {
         foreach (QuestPointer questPointer in questPointerList)
         {
             questPointer.Update();
         }
-        
-       
     }
 
     

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2425219210701220193}
   - component: {fileID: 4381598371593104196}
   - component: {fileID: 5987543901165853152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: paved road straight turn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

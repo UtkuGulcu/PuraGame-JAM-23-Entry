@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8e9656c327daa41b937b5c88adda25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carPrice: 5000
+  factoryPrice: 10000
+  gumballMachine: 80
