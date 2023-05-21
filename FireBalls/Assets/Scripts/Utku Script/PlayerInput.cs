@@ -33,7 +33,8 @@ public class PlayerInput : MonoBehaviour
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             float verticalInput = Input.GetAxisRaw("Vertical");
 
-            inputVector = new Vector3(horizontalInput, 0, verticalInput);
+            inputVector = Camera.main.transform.right * horizontalInput + Camera.main.transform.forward * verticalInput;
+            inputVector.y = 0;
         }
         else
         {

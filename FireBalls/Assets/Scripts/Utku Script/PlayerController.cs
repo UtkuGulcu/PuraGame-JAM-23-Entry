@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
         Vector3 inputVector = PlayerInput.Instance.GetInputVector();
         isMoving = inputVector != Vector3.zero;
 
-
         CharacterController.Move(inputVector * (Time.deltaTime * movementSpeed));
     }
 
