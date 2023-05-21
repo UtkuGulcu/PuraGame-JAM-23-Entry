@@ -43,11 +43,14 @@ public class ResourceManager : MonoBehaviour
     public void IncreaseMoney(int amount)
     {
         Resources[ResourceType.Money] += amount;
+        GameManager.Instance.UpdateMoney();
+        
     }
 
     public void DecreaseMoney(int amount)
     {
         Resources[ResourceType.Money] -= amount;
+        GameManager.Instance.UpdateMoney();
     }
 
     public int GetCarPrice()
