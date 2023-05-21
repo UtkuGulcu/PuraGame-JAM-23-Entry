@@ -21,4 +21,14 @@ public class Factory : MonoBehaviour, IInteractable
     {
 
     }
+
+    public void ShowInteract()
+    {
+        Debug.Log("Show buy factory UI");
+    }
+
+    public void HideInteract()
+    {
+        Debug.Log("Hide buy factory UI");
+    }
 }

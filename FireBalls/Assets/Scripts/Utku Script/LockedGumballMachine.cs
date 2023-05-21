@@ -23,4 +23,14 @@ public class LockedGumballMachine : MonoBehaviour, IInteractable
     {
         
     }
+
+    public void ShowInteract()
+    {
+        Debug.Log("Show buy gumball machine UI");
+    }
+
+    public void HideInteract()
+    {
+        Debug.Log("Hide buy gumball machine UI");
+    }
 }
