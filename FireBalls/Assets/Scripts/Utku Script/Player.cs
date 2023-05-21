@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     {
         PlayerController.Instance.LockMovement();
 
-        Vector3 boxSize = new Vector3(1.5f, 2f, 1.5f);
+        Vector3 boxSize = new Vector3(2, 2f, 2);
 
         interactedColliders = Physics.OverlapBox(transform.position, boxSize, Quaternion.identity);
 
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position, new Vector3(3, 2, 3));
+        Gizmos.DrawWireCube(transform.position, new Vector3(4, 2, 4));
     }
 
     public void GetInCar()
